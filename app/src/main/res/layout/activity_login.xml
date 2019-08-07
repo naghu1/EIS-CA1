@@ -1,9 +1,118 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp">
+ 
+
+        <LinearLayout
+            android:id="@+id/logoContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="24dp"
+            android:padding="16dp">
+
+            <ImageView
+                android:id="@+id/logo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:alpha="1"
+                android:scaleType="centerCrop"
+                android:src="@drawable/dbs_logo" />
+
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/logoContainer"
+            android:layout_alignStart="@+id/logoContainer"
+            android:layout_alignEnd="@+id/logoContainer"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="2dp"
+                android:layout_marginTop="28dp"
+                
+                android:text="Mobile Number"
+                android:textColor="@color/black"
+                android:textSize="14sp"
+                android:visibility="gone" />
+
+            <EditText
+                android:drawablePadding="8dp"
+                android:maxLines="1"
+                android:hint="User ID"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/ic_account_circle_black_18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+
+            <EditText
+                android:layout_marginTop="16dp"
+                android:drawablePadding="8dp"
+                android:maxLines="1"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:textColor="@color/black"
+                android:drawableLeft="@drawable/ic_vpn_key_black_18dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+
+            <Button
+                android:id="@+id/login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignStart="@+id/logoContainer"
+                android:layout_alignEnd="@+id/logoContainer"
+                android:layout_above="@+id/signUpContainer"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="24dp"
+                android:layout_marginBottom="8dp"
+                android:letterSpacing="0.16"
+                android:onClick="phoneLogin"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="LOGIN"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/colorPrimary"  />
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+
+
+    <TextView
+        android:paddingBottom="8dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Some Project Related Text"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        />
+
+
+</RelativeLayout>
