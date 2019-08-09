@@ -21,7 +21,7 @@
             app:titleTextColor="@color/white">
 
             <TextView
-                android:id="@+id/location"
+                android:id="@+id/logout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
@@ -97,23 +97,18 @@
 
     </LinearLayout>
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipeRefreshLayout"
+    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
+    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
+    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
+    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
+
+    <ListView
+        android:padding="5dp"
+        android:id="@+id/booksListView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:padding="5dp"
-            android:id="@+id/recyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-
-
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
+    </ListView>
 
 
 </LinearLayout>
