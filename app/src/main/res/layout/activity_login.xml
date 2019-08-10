@@ -53,6 +53,7 @@
                 android:visibility="gone" />
 
             <EditText
+                android:id="@+id/userId"
                 android:drawablePadding="8dp"
                 android:maxLines="1"
                 android:hint="User ID"
@@ -64,6 +65,7 @@
 
 
             <EditText
+                android:id="@+id/password"
                 android:layout_marginTop="16dp"
                 android:drawablePadding="8dp"
                 android:maxLines="1"
