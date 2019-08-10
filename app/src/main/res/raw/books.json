@@ -1,96 +1,173 @@
 {
   "1": [
     {
-      "name" :"A Software Engineerng A1",
-      "books" : [
+      "name": "Software Engineerng ",
+      "books": [
         {
-          "title": "b1 Object-oriented software engineer A",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
-          "date": "2015",
-          "url": "url"
+          "title": "UML distilled : a brief guide to the standard object modeling language",
+          "author": "Fowler, Martin",
+          "isbn": "9780321193681",
+          "edition": "3rd",
+          "publisher": "Addison-Wesley",
+          "date": "2003",
+          "url": "http://ce.sharif.edu/courses/96-97/2/ce418-1/resources/root/Books/UMLDistilled.pdf"
         },
         {
-          "title": "b4 Object-oriented software engineer B",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
-          "date": "2015",
-          "url": "url"
+          "title": "Object-oriented software engineering : using UML, Patterns, and Java",
+          "author": "Bruegge, Bernd,Dutoit, Allen H",
+          "isbn": "9780138152215",
+          "edition": "3rd",
+          "publisher": "Pearson Education",
+          "date": "2010",
+          "url": "https://doc.lagout.org/programmation/Java/Object-Oriented Software Engineering using UML, Patterns, and Java (3rd ed.) [Bruegge & Dutoit 2009-08-08].pdf"
         }
       ]
     },
     {
-      "name" :"B Software Engineerng A2",
-      "books" : [
+      "name": "Advanced database systems",
+      "books": [
         {
-          "title": "b3 Object-oriented software engineer A",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
+          "title": "Database systems : a practical approach to design, implementation, and management",
+          "author": "Connolly, Thomas M.,Begg, Carolyn E",
+          "isbn": "9781292061184",
+          "edition": "6th",
+          "publisher": "Pearson Education",
           "date": "2015",
-          "url": "url"
+          "url": "https://comsatsbcs.files.wordpress.com/2019/02/database-management-textbook.pdf"
         },
+        {
+          "title": "Database systems : a practical approach to design, implementation, and management",
+          "author": "Connolly, Thomas M.,Begg, Carolyn E",
+          "isbn": "9780132943260",
+          "edition": "6th",
+          "publisher": "Pearson Education",
+          "date": "2014",
+          "url": "https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=8&ved=2ahUKEwiyx7i5mfjjAhUWQhUIHfp8DzAQFjAHegQICRAC&url=https%3A%2F%2Ffaculty.psau.edu.sa%2Ffiledownload%2Fdoc-4-pdf-4adad48d42922db4295e8b7327fbbbf1-original.pdf&usg=AOvVaw21fyDoMrpdrTliCpQCRa6M"
+        }
+      ]
+    },
+    {
+      "name": "Web and Mobile Technologies ",
+      "books": [
         {
           "title": "Building Android apps with HTML, CSS, and JavaScript : making native apps with standards-based web",
           "author": "Stark, Jonathan",
           "isbn": "9781449316419",
           "edition": "2nd",
-          "publisher": " O Reilly Media",
+          "publisher": "O Reilly Media",
           "date": "2012",
-          "url": "url"
+          "url": "http://people.cs.deu.edu.tr/semih/Android_Books/OReilly%20Building%20Android%20Apps%20with%20HTML%20CSS%20and%20JavaScript%202nd%20%282012%29.pdf"
+        },
+        {
+          "title": "Building iPhone apps with HTML, CSS, and JavaScript",
+          "author": "Stark, Jonathan",
+          "isbn": "9780596805784",
+          "edition": "1st",
+          "publisher": "O Reilly Media",
+          "date": "2010",
+          "url": "ftp://ftp.micronet-rostov.ru/linux-support/books/programming/Mobile-Apps/iOS - iPhone/[O`Reilly] - Building iPhone Apps with HTML, CSS, and JavaScript - [Stark].pdf"
+        },
+        {
+          "title": "Internet and World Wide Web how to program",
+          "author": "Deitel, Paul J.,",
+          "isbn": "9780273764021",
+          "edition": "5th",
+          "publisher": "Pearson Education",
+          "date": "2012",
+          "url": "https://sureshvcetit.files.wordpress.com/2017/10/prentice-hall-internet-and-world-wide-web-how-to-program-5th-edition-0132151006.pdf"
+        },
+        {
+          "title": "Learning Python : powerful object-oriented programming",
+          "author": "Lutz, Mark",
+          "isbn": "9781449355739",
+          "edition": "5th",
+          "publisher": "O Reilly Media",
+          "date": "2013",
+          "url": "https://cfm.ehu.es/ricardo/docs/python/Learning_Python.pdf"
+        },
+        {
+          "title": "Learn JavaScript and Ajax with w3schools",
+          "author": "Refsnes, Hege,",
+          "isbn": "9780470611944",
+          "edition": "1st",
+          "publisher": "Wiley Publishing",
+          "date": "2010",
+          "url": "https://negingostar.com/temp_uploads/pdf/Learn_JavaScript_and_Ajax_with_w3Schools.pdf"
         }
       ]
     }
   ],
   "2": [
     {
-      "name" :"C Software Engineerng B1",
-      "books" : [
+      "name": "B9IS102 Computer Systems Security",
+      "books": [
         {
-          "title": "b5 Object-oriented software engineer A",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
-          "date": "2015",
-          "url": "url"
+          "title": "Network security essentials : applications and standards(core reading)",
+          "author": "McClure, Stuart, Scambray, Joel, Kurtz, George",
+          "isbn": "9780071780285",
+          "edition": "7th",
+          "publisher": "McGraw-Hill",
+          "date": "2012",
+          "url": "https://doc.lagout.org/security/Hacking%20Exposed.pdf"
         },
         {
-          "title": "b6 Object-oriented software engineer B",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
-          "date": "2015",
-          "url": "url"
+          "title": "Linux firewalls : attack detection and response with iptables, psad, and fwsnort",
+          "author": "Rash, Michael",
+          "isbn": "9781593271411",
+          "edition": "7th",
+          "publisher": "No Starch Press",
+          "date": "2007",
+          "url": "https://doc.lagout.org/security/Linux%20Firewalls.pdf"
+        },
+        {
+          "title": "Cryptography and network security : principles and practice",
+          "author": "Stallings, William",
+          "isbn": "9781292158587",
+          "edition": "7th",
+          "publisher": "Pearson Education",
+          "date": "2017",
+          "url": "http://dl.hiva-network.com/Library/security/Cryptography-and-network-security-principles-and-practice.pdf"
         }
       ]
     },
     {
-      "name" :"D Software Engineerng b2",
-      "books" : [
+      "name": "B9IS104 Enterprise Information Systems",
+      "books": [
         {
-          "title": "b7 Object-oriented software engineer A",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
-          "date": "2015",
-          "url": "url"
+          "title": "The art of enterprise information architecture : a systems-based approach for unlocking business insight(Core reading)",
+          "author": "Schroeck, Michael",
+          "isbn": "9780137035717",
+          "edition": "5th",
+          "publisher": "IBM Press",
+          "date": "2010",
+          "url": "https://ia801800.us.archive.org/30/items/The_Art_of_Enterprise_Information_Architecture_2011_BBS/The_Art_of_Enterprise_Information_Architecture_2011_BBS.pdf"
         },
         {
-          "title": "b8 Object-oriented software engineer B",
-          "author": "Sommerville, Ian",
-          "isbn": "9781292096131",
-          "edition": "10th",
-          "publisher": " Pearson Education",
-          "date": "2015",
-          "url": "url"
+          "title": "Distributed systems : concepts and design",
+          "author": "Godinez, Mario,Hechler, Eberhard,Koenig, Klaus,Lockwood, Steve,Oberhofer, Martin,Coulouris, George,Dollimore, Jean,Kindberg, Tim,Blair, Gordon",
+          "isbn": "9780273760597",
+          "edition": "5th",
+          "publisher": "Pearson Education",
+          "date": "2011",
+          "url": "https://www.gecg.in/papers/ds5thedn.pdf"
+        },
+        {
+          "title": "Distributed and cloud computing : clusters, grids, clouds, and the future internet",
+          "author": "Hwang, Kai,Dongarra, J. J.,Fox, Geoffrey C.",
+          "isbn": "9780123858801",
+          "edition": "6th",
+          "publisher": "Morgan Kaufmann",
+          "date": "2011",
+          "url": "https://eniac2017.files.wordpress.com/2017/03/distributed-and-cloud-computing.pdf"
+        },
+        {
+          "title": "UNIX and Linux system administration handbook",
+          "author": "Nemeth, Evi,Snyder, Garth,Hein, Trent R.,Whaley, Ben,Mackin, Dan",
+          "isbn": "9780134277554",
+          "edition": "5th",
+          "publisher": "Pearson education",
+          "date": "2017",
+          "url": "http://io.yaht.net/~lisp/9780134278285.pdf"
         }
       ]
     }
