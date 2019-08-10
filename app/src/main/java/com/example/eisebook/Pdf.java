@@ -1,5 +1,6 @@
 package com.example.eisebook;
 
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -44,7 +45,8 @@ public class Pdf extends AppCompatActivity implements OnPageChangeListener, OnLo
     ProgressDialog pDialog;
     File currentFile;
 
-    String isbn;
+    String url = "";
+    String isbn = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,11 +55,9 @@ public class Pdf extends AppCompatActivity implements OnPageChangeListener, OnLo
 
         this.pagenumber = (TextView) findViewById(R.id.page_number);
 
-        isbn = getIntent().getStringExtra("isbn");
-
         progressDialog = new ProgressDialog(Pdf.this);
         progressDialog.setTitle("Message");
-        progressDialog.setMessage("Loading ! Please Wait.");
+        progressDialog.setMessage("Please Wait...");
         progressDialog.setCancelable(true);
 
         pDialog = new ProgressDialog(Pdf.this);
@@ -94,6 +94,8 @@ public class Pdf extends AppCompatActivity implements OnPageChangeListener, OnLo
             @Override
             public void onClick(View view) {
 
+                progressDialog.setMessage("Loading, Please Wait !");
+
                 try {
                     int go_to_page = Integer.parseInt(page_input.getText().toString());
                     go_to_page--;
@@ -104,15 +106,15 @@ public class Pdf extends AppCompatActivity implements OnPageChangeListener, OnLo
                         goToDialog.hide();
                         Log.e("flag", "A");
 
-                        pdfView.fromAsset(isbn+".pdf")
+                        pdfView.fromFile(currentFile)
+                                .defaultPage(go_to_page)
                                 .enableDoubletap(true)
                                 .enableAntialiasing(true)
                                 .onPageChange(Pdf.this)
+                                .onLoad(Pdf.this)
                                 .spacing(10)
                                 .onError(Pdf.this)
-                                .onLoad(Pdf.this)
                                 .load();
-
                     } else {
                         error.setVisibility(View.VISIBLE);
                         Log.e("flag", "B");
@@ -131,22 +133,69 @@ public class Pdf extends AppCompatActivity implements OnPageChangeListener, OnLo
         });
 
 
-        getFile();
+        url = getIntent().getStringExtra("url");
+        isbn = getIntent().getStringExtra("isbn");
+
+        getReports();
     }
 
-    private void getFile() {
+    private void getReports() {
 
         progressDialog.show();
 
+        File file = new File(Environment.getExternalStorageDirectory() + "/EIS/");
 
-        pdfView.fromAsset(isbn+".pdf")
-                .enableDoubletap(true)
-                .enableAntialiasing(true)
-                .onPageChange(Pdf.this)
-                .spacing(10)
-                .onError(Pdf.this)
-                .onLoad(Pdf.this)
-                .load();
+        if (!(file.exists())) {
+            file.mkdirs();
+        }
+
+        currentFile = new File(Environment.getExternalStorageDirectory() + "/EIS/"+isbn+".pdf");
+        if(currentFile.exists())
+        {
+            progressDialog.setMessage("Loading.., Please Wait !");
+
+            progressDialog.dismiss();
+
+            pdfView.fromFile(currentFile)
+                    .enableDoubletap(true)
+                    .enableAntialiasing(true)
+                    .onPageChange(Pdf.this)
+                    .spacing(10)
+                    .onError(Pdf.this)
+                    .onLoad(Pdf.this)
+                    .load();
+        }else
+        {
+            progressDialog.setMessage("Downloading.. Please Wait !");
+
+            String url = getIntent().getStringExtra("url");
+
+            Log.e("url",url);
+
+            Ion.with(Pdf.this)
+                    .load(url)
+                    .write(currentFile)
+                    .setCallback(new FutureCallback<File>() {
+
+                        @Override
+                        public void onCompleted(Exception e, File file) {
+
+                            progressDialog.dismiss();
+
+                            pdfView.fromFile(currentFile)
+                                    .enableDoubletap(true)
+                                    .enableAntialiasing(true)
+                                    .onPageChange(Pdf.this)
+                                    .spacing(10)
+                                    .onError(Pdf.this)
+                                    .onLoad(Pdf.this)
+                                    .load();
+                        }
+
+                    });
+        }
+
+
 
     }
 
@@ -165,7 +214,6 @@ public class Pdf extends AppCompatActivity implements OnPageChangeListener, OnLo
         Log.e("Load Completed", nbPages + "");
         n = nbPages;
         msg.setText("Enter a page number between 1 - " + n);
-        progressDialog.dismiss();
 
     }
 

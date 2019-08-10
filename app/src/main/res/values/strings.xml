@@ -1,10 +1,18 @@
 <resources>
     <string name="app_name">EIS Ebook</string>
+    <string-array name="courses">
+        <item>Semester 1</item>
+        <item>Semester 2</item>
+    </string-array>
 
     <string-array name="branches">
         <item>MSC in Information Systems with Computing.</item>
         <item>MSC in Network Security.</item>
     </string-array>
 
-
+    <string-array name="subjects">
+    <item>Subject A</item>
+    <item>Subject B</item>
+    <item>Subject C</item>
+</string-array>
 </resources>

@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="24dp">
-
+ 
 
         <LinearLayout
             android:id="@+id/logoContainer"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="2dp"
                 android:layout_marginTop="28dp"
-
+                
                 android:text="Mobile Number"
                 android:textColor="@color/black"
                 android:textSize="14sp"
@@ -132,7 +132,7 @@
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="10509728 &amp; 10514575"
+        android:text="Some Project Related Text"
         android:textColor="@color/black"
         android:textSize="10sp"
         />

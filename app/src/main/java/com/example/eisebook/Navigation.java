@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.Manifest;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -15,7 +18,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.toolbox.StringRequest;
+import com.karumi.dexter.Dexter;
+import com.karumi.dexter.MultiplePermissionsReport;
+import com.karumi.dexter.PermissionToken;
+import com.karumi.dexter.listener.PermissionRequest;
+import com.karumi.dexter.listener.multi.MultiplePermissionsListener;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -27,8 +34,10 @@ import java.io.Reader;
 import java.io.StringWriter;
 import java.io.Writer;
 import java.lang.reflect.Method;
+import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Navigation extends AppCompatActivity {
 
@@ -44,6 +53,7 @@ public class Navigation extends AppCompatActivity {
     BookAdapter bookAdapter;
 
     int currentSubjectPosition = 0;
+    int currentBookPosition = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,8 +76,8 @@ public class Navigation extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                showToastMessage("Please wait!");
-                startActivity(new Intent(Navigation.this, Pdf.class).putExtra("isbn",bookArrayList.get(i).isbn));
+               currentBookPosition = i;
+               ask_permission();
 
             }
         });
@@ -219,6 +229,89 @@ public class Navigation extends AppCompatActivity {
             showToastMessage("Error Occured");
         }
     }
+
+    public void ask_permission() {
+
+        Dexter.withActivity(Navigation.this)
+                .withPermissions(
+                        Manifest.permission.READ_EXTERNAL_STORAGE,
+                        Manifest.permission.WRITE_EXTERNAL_STORAGE
+                ).withListener(new MultiplePermissionsListener() {
+
+            @Override
+            public void onPermissionsChecked(MultiplePermissionsReport report) {
+
+                if (report.areAllPermissionsGranted()) {
+
+                    showToastMessage("Please wait!");
+
+                    Intent intent = new Intent(Navigation.this, Pdf.class);
+                    intent.putExtra("isbn",bookArrayList.get(currentBookPosition).isbn);
+                    intent.putExtra("url",bookArrayList.get(currentBookPosition).url);
+                    startActivity(intent);
+
+                } else if (report.isAnyPermissionPermanentlyDenied()) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Navigation.this);
+                    builder.setTitle("Permission");
+                    builder.setMessage("Application needs Storage permissions to continue");
+                    builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+
+                            Intent intent = new Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                            Uri uri = Uri.fromParts("package", getPackageName(), null);
+                            intent.setData(uri);
+                            startActivityForResult(intent, 1);
+                            Toast.makeText(getBaseContext(), "Go to Permissions to Grant STORAGE", Toast.LENGTH_LONG).show();
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    builder.show();
+
+                } else {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(Navigation.this);
+                    builder.setTitle("Permission");
+                    builder.setMessage("Application needs Storage permissions to continue");
+                    builder.setPositiveButton("Grant", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                            ask_permission();
+                        }
+                    });
+                    builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            dialog.cancel();
+                        }
+                    });
+                    builder.show();
+
+                }
+
+                Log.e("report", "areAllPermissionsGranted" + report.areAllPermissionsGranted() + "");
+                Log.e("report", "getDeniedPermissionResponses" + report.getDeniedPermissionResponses() + "");
+                Log.e("report", "getGrantedPermissionResponses" + report.getGrantedPermissionResponses() + "");
+                Log.e("report", "isAnyPermissionPermanentlyDenied" + report.isAnyPermissionPermanentlyDenied() + "");
+            }
+
+            @Override
+            public void onPermissionRationaleShouldBeShown(List<PermissionRequest> permissions, PermissionToken token) {
+
+                token.continuePermissionRequest();
+
+            }
+
+
+        }).check();
+    }
+
 
     private void showToastMessage(String msg) {
 
