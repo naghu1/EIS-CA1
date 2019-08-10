@@ -21,6 +21,7 @@ public class Splash extends AppCompatActivity {
                     Thread.sleep(1500);
 
                     startActivity(new Intent(Splash.this,Login.class));
+                    finish();
 
                 }catch (Exception e)
                 {

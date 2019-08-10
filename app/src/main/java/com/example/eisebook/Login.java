@@ -33,10 +33,10 @@ public class Login extends AppCompatActivity {
                 String uid = userId.getText().toString();
                 String pass = password.getText().toString();
 
-                if (!uid.replaceAll(" ", "").equals("varsha")) {
+                if (!uid.equals("varsha")) {
                     showToastMessage("Invalid User ID");
 
-                } else if (!pass.equals("tnces")) {
+                } else if (!pass.equals("naghma")) {
                     showToastMessage("Invalid Password");
 
                 } else {
