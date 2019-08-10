@@ -1,0 +1,98 @@
+{
+  "1": [
+    {
+      "name" :"A Software Engineerng A1",
+      "books" : [
+        {
+          "title": "b1 Object-oriented software engineer A",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        },
+        {
+          "title": "b4 Object-oriented software engineer B",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        }
+      ]
+    },
+    {
+      "name" :"B Software Engineerng A2",
+      "books" : [
+        {
+          "title": "b3 Object-oriented software engineer A",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        },
+        {
+          "title": "Building Android apps with HTML, CSS, and JavaScript : making native apps with standards-based web",
+          "author": "Stark, Jonathan",
+          "isbn": "9781449316419",
+          "edition": "2nd",
+          "publisher": " O Reilly Media",
+          "date": "2012",
+          "url": "url"
+        }
+      ]
+    }
+  ],
+  "2": [
+    {
+      "name" :"C Software Engineerng B1",
+      "books" : [
+        {
+          "title": "b5 Object-oriented software engineer A",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        },
+        {
+          "title": "b6 Object-oriented software engineer B",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        }
+      ]
+    },
+    {
+      "name" :"D Software Engineerng b2",
+      "books" : [
+        {
+          "title": "b7 Object-oriented software engineer A",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        },
+        {
+          "title": "b8 Object-oriented software engineer B",
+          "author": "Sommerville, Ian",
+          "isbn": "9781292096131",
+          "edition": "10th",
+          "publisher": " Pearson Education",
+          "date": "2015",
+          "url": "url"
+        }
+      ]
+    }
+  ]
+}

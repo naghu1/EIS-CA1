@@ -47,9 +47,7 @@
         android:background="@color/white"
         android:elevation="5dp"
         android:orientation="horizontal"
-        android:paddingLeft="4dp"
         android:paddingTop="4dp"
-        android:paddingRight="4dp"
         android:paddingBottom="4dp"
         android:weightSum="2">
 
@@ -58,7 +56,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_account_balance_black_18dp"
             android:background="@drawable/circular_accentcolorgradient"
@@ -67,7 +65,8 @@
             android:gravity="center"
             android:maxLines="1"
             android:padding="8dp"
-            android:text="Course"
+            android:ellipsize="end"
+            android:text="Semester 1"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="14sp"
@@ -78,7 +77,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:layout_margin="5dp"
+            android:layout_margin="2dp"
             android:layout_weight="1"
             android:drawableLeft="@drawable/ic_assignment_black_18dp"
             android:background="@drawable/circular_accentcolorgradient"
@@ -86,6 +85,7 @@
             android:drawableTint="@color/white"
             android:gravity="center"
             android:maxLines="1"
+            android:ellipsize="end"
             android:padding="8dp"
             android:text="Subject"
             android:textAllCaps="false"
@@ -96,11 +96,6 @@
 
 
     </LinearLayout>
-
-    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
-    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
-    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
-    <include android:layout_width="match_parent" android:layout_height="wrap_content" layout="@layout/item_book" />
 
     <ListView
         android:padding="5dp"

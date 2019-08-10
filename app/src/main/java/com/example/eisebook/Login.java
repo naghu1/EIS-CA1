@@ -21,8 +21,8 @@ public class Login extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        userId = (EditText)findViewById(R.id.userId);
-        password = (EditText)findViewById(R.id.password);
+        userId = (EditText) findViewById(R.id.userId);
+        password = (EditText) findViewById(R.id.password);
         login = (Button) findViewById(R.id.login);
 
 
@@ -33,30 +33,27 @@ public class Login extends AppCompatActivity {
                 String uid = userId.getText().toString();
                 String pass = password.getText().toString();
 
-                if(!uid.replaceAll(" ","").equals("varsha"))
-                {
+                if (!uid.replaceAll(" ", "").equals("varsha")) {
                     showToastMessage("Invalid User ID");
 
-                }else if(!uid.replaceAll(" ","").equals("tnces"))
-                {
+                } else if (!pass.equals("tnces")) {
                     showToastMessage("Invalid Password");
 
-                }else
-                {
+                } else {
                     showToastMessage("Welcome!");
 
-                    Intent intent = new Intent(Login.this,Navigation.class);
+                    Intent intent = new Intent(Login.this, Navigation.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
-
 
 
     }
 
     private void showToastMessage(String msg) {
 
-        Toast.makeText(Login.this,msg,Toast.LENGTH_SHORT).show();
+        Toast.makeText(Login.this, msg, Toast.LENGTH_SHORT).show();
     }
 }
